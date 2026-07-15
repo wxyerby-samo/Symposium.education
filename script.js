@@ -67,7 +67,8 @@
       e.preventDefault();
       var emailInput = ctaForm.querySelector('input[type="email"]');
       var email = emailInput ? emailInput.value.trim() : '';
-      if (!email) return;
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailPattern.test(email)) return;
 
       var btn = ctaForm.querySelector('button[type="submit"]');
       btn.textContent = '🎉 You\'re on the list!';
@@ -106,10 +107,15 @@
   /* ---- Smooth anchor scroll for all in-page links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var selector = this.getAttribute('href');
+      try {
+        var target = document.querySelector(selector);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } catch (err) {
+        // Invalid selector — let the browser handle it naturally
       }
     });
   });

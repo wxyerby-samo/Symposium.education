@@ -429,7 +429,7 @@ button {
 /* Separate keyframes for card--3 to preserve vertical centering */
 @keyframes float-centered {
   0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 10px)); }
+  50% { transform: translateY(calc(-50% - 0.625rem)); }
 }
 
 .card-avatar {
@@ -633,14 +633,10 @@ button {
   justify-content: center;
 }
 
-.step--reverse .step__visual {
-  order: -1;
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-.step--reverse .step__number { grid-column: 1; grid-row: 1; }
-.step--reverse .step__content { grid-column: 2 / 4; }
-.step--reverse .step__visual  { grid-column: 4; }
+/* Reverse step: show visual in column 2, content in column 3 */
+.step--reverse .step__number  { grid-column: 1; grid-row: 1; }
+.step--reverse .step__visual  { grid-column: 2; grid-row: 1; }
+.step--reverse .step__content { grid-column: 3; grid-row: 1; }
 
 .mockup-form {
   background: var(--color-bg-alt);
