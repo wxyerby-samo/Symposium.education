@@ -73,6 +73,18 @@ button {
   background: none;
 }
 
+/* ---------- Scroll-reveal animation (toggled via JS) ---------- */
+.js-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ---------- Utility ---------- */
 .container {
   width: 100%;
@@ -405,7 +417,7 @@ button {
   width: 160px;
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  animation-name: float-centered;
   animation-delay: 0.8s;
 }
 
@@ -414,12 +426,11 @@ button {
   50% { transform: translateY(-10px); }
 }
 
-.hero__card--3 {
-  top: 50%;
-  right: 0;
-  animation-delay: 0.8s;
+/* Separate keyframes for card--3 to preserve vertical centering */
+@keyframes float-centered {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 10px)); }
 }
-/* Override translateY for card--3 separately via JS-free workaround */
 
 .card-avatar {
   width: 36px;

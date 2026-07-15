@@ -83,20 +83,16 @@
       '.feature-card, .testimonial, .step, .pricing-card, .stat'
     );
 
-    // Add initial state via JS (only when JS is available)
+    // Mark elements with the fade class (only when JS is available)
     observeTargets.forEach(function (el) {
-      el.style.opacity = '0';
-      el.style.transform = (el.style.transform || '') + ' translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.classList.add('js-fade');
     });
 
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = entry.target.style.transform
-              .replace('translateY(20px)', 'translateY(0)');
+            entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
         });
