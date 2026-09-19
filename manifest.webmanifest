@@ -1,0 +1,10 @@
+{
+  "name": "My AI Agent",
+  "short_name": "Agent",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "description": "A lightweight PWA chat interface for an AI agent.",
+  "icons": []
+}

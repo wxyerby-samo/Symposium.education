@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>My AI Agent</title>
+    <style>
+      :root {
+        --bg: #121212;
+        --chat-bg: #1e1e1e;
+        --text: #ffffff;
+        --accent: #007aff;
+        --input-bg: #0f0f0f;
+        --border: #333333;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+      }
+
+      #chat-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .msg {
+        max-width: min(80%, 520px);
+        padding: 12px 16px;
+        border-radius: 18px;
+        line-height: 1.4;
+        font-size: 16px;
+        white-space: pre-wrap;
+      }
+
+      .user {
+        background: var(--accent);
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+      }
+
+      .agent {
+        background: var(--chat-bg);
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+      }
+
+      #input-area {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        background: var(--chat-bg);
+        padding-bottom: calc(15px + env(safe-area-inset-bottom));
+      }
+
+      #user-input {
+        flex: 1;
+        min-width: 0;
+        background: var(--input-bg);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 12px 14px;
+        border-radius: 25px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      #user-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      button {
+        appearance: none;
+        border: none;
+        background: var(--accent);
+        color: white;
+        padding: 0 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 48px;
+      }
+
+      button:active {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container" aria-live="polite">
+      <div class="msg agent">Hello! What busywork can I take off your plate today?</div>
+    </div>
+
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Ask your agent to do something..." aria-label="Message input" />
+      <button type="button" id="send-button">Send</button>
+    </div>
+
+    <script>
+      const container = document.getElementById('chat-container');
+      const input = document.getElementById('user-input');
+      const button = document.getElementById('send-button');
+
+      function appendMessage(text, type) {
+        const message = document.createElement('div');
+        message.className = `msg ${type}`;
+        message.textContent = text;
+        container.appendChild(message);
+        container.scrollTop = container.scrollHeight;
+      }
+
+      function setLoading(isLoading) {
+        button.disabled = isLoading;
+        button.textContent = isLoading ? 'Sending...' : 'Send';
+      }
+
+      async function sendMessage() {
+        const text = input.value.trim();
+        if (!text) return;
+
+        appendMessage(text, 'user');
+        input.value = '';
+        setLoading(true);
+
+        try {
+          const response = await fetch('/agent-endpoint', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ command: text })
+          });
+
+          const data = await response.json();
+          appendMessage(data.reply || 'I’m ready to help.', 'agent');
+        } catch (error) {
+          appendMessage('Sorry, I had trouble processing that request.', 'agent');
+        } finally {
+          setLoading(false);
+          input.focus();
+        }
+      }
+
+      button.addEventListener('click', sendMessage);
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "pwa-chat-agent-interface",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PWA chat interface with an OpenAI-powered agent endpoint",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "openai": "^4.57.0"
+  }
+}
