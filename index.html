@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Symposium.education — a modern platform for collaborative learning, expert-led courses, and academic discussions." />
+  <title>Symposium.education — Learn Together, Grow Further</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a class="nav__logo" href="#hero" aria-label="Symposium.education home">
+        <span class="nav__logo-icon" aria-hidden="true">◈</span>
+        Symposium<span class="nav__logo-dot">.education</span>
+      </a>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#cta" class="btn btn--ghost">Log In</a>
+        <a href="#cta" class="btn btn--primary">Get Started Free</a>
+      </div>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__badge"><span aria-hidden="true">🎓</span> Trusted by 50,000+ learners worldwide</div>
+        <h1 class="hero__headline">
+          Where Knowledge Meets<br />
+          <span class="gradient-text">Conversation</span>
+        </h1>
+        <p class="hero__sub">
+          Symposium brings together expert instructors, curated courses, and live
+          academic discussions — so you learn faster, deeper, and together.
+        </p>
+        <div class="hero__cta-group">
+          <a href="#cta" class="btn btn--primary btn--lg">Start Learning Free</a>
+          <a href="#how-it-works" class="btn btn--outline btn--lg">
+            <span class="btn__play" aria-hidden="true">▶</span> See How It Works
+          </a>
+        </div>
+        <p class="hero__note">No credit card required · Cancel anytime</p>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__card hero__card--1">
+          <div class="card-avatar card-avatar--blue"></div>
+          <div class="card-content">
+            <div class="card-line card-line--wide"></div>
+            <div class="card-line card-line--narrow"></div>
+          </div>
+          <div class="card-badge card-badge--green">Live</div>
+        </div>
+        <div class="hero__card hero__card--2">
+          <span class="card-icon">📊</span>
+          <div class="card-content">
+            <div class="card-line card-line--wide"></div>
+            <div class="card-line card-line--narrow"></div>
+          </div>
+          <div class="card-progress">
+            <div class="card-progress-bar" style="width:72%"></div>
+          </div>
+        </div>
+        <div class="hero__card hero__card--3">
+          <span class="card-icon">🏆</span>
+          <p class="card-small-text">Course completed!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF LOGOS ========== -->
+    <section class="logos" aria-label="Featured in">
+      <div class="container">
+        <p class="logos__label">Loved by teams at</p>
+        <ul class="logos__list" role="list">
+          <li class="logos__item">Acme Corp</li>
+          <li class="logos__item">Brightway</li>
+          <li class="logos__item">NovaTech</li>
+          <li class="logos__item">Clearpath</li>
+          <li class="logos__item">Vertix Labs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Features</span>
+          <h2 class="section__title">Everything you need to learn, teach, and grow</h2>
+          <p class="section__sub">Symposium combines the best of structured courses, live seminars, and community-driven learning in one place.</p>
+        </div>
+
+        <div class="features__grid">
+
+          <div class="feature-card feature-card--accent-blue">
+            <div class="feature-card__icon" aria-hidden="true">📚</div>
+            <h3 class="feature-card__title">Expert-Led Courses</h3>
+            <p class="feature-card__desc">Access hundreds of courses taught by practitioners and academics — from beginner to advanced.</p>
+          </div>
+
+          <div class="feature-card feature-card--accent-purple">
+            <div class="feature-card__icon" aria-hidden="true">🎙️</div>
+            <h3 class="feature-card__title">Live Symposiums</h3>
+            <p class="feature-card__desc">Join real-time academic discussions, Q&amp;A panels, and interactive seminars with global experts.</p>
+          </div>
+
+          <div class="feature-card feature-card--accent-teal">
+            <div class="feature-card__icon" aria-hidden="true">💬</div>
+            <h3 class="feature-card__title">Community Discussions</h3>
+            <p class="feature-card__desc">Engage in threaded conversations with fellow learners and instructors. Ask, share, and explore ideas together.</p>
+          </div>
+
+          <div class="feature-card feature-card--accent-orange">
+            <div class="feature-card__icon" aria-hidden="true">🎯</div>
+            <h3 class="feature-card__title">Personalised Paths</h3>
+            <p class="feature-card__desc">Our smart recommendation engine builds a custom curriculum based on your goals and learning style.</p>
+          </div>
+
+          <div class="feature-card feature-card--accent-green">
+            <div class="feature-card__icon" aria-hidden="true">📜</div>
+            <h3 class="feature-card__title">Verified Certificates</h3>
+            <p class="feature-card__desc">Earn shareable, verifiable credentials recognised by leading institutions and employers.</p>
+          </div>
+
+          <div class="feature-card feature-card--accent-pink">
+            <div class="feature-card__icon" aria-hidden="true">📱</div>
+            <h3 class="feature-card__title">Learn Anywhere</h3>
+            <p class="feature-card__desc">Seamless experience across web, iOS, and Android. Download lessons for offline access on the go.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="how-it-works section" id="how-it-works">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">How It Works</span>
+          <h2 class="section__title">From sign-up to scholarship in three steps</h2>
+        </div>
+
+        <ol class="steps" role="list">
+          <li class="step">
+            <div class="step__number" aria-hidden="true">01</div>
+            <div class="step__content">
+              <h3 class="step__title">Create your free account</h3>
+              <p class="step__desc">Sign up in seconds — no payment details needed. Tell us your learning goals and we'll build your first recommendation feed immediately.</p>
+            </div>
+            <div class="step__visual step__visual--signup" aria-hidden="true">
+              <div class="mockup-form">
+                <div class="mockup-input"></div>
+                <div class="mockup-input mockup-input--half"></div>
+                <div class="mockup-btn"></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step--reverse">
+            <div class="step__number" aria-hidden="true">02</div>
+            <div class="step__content">
+              <h3 class="step__title">Explore &amp; enrol in courses</h3>
+              <p class="step__desc">Browse our growing library, attend a live symposium, or follow a curated learning path — all searchable and filterable by topic, level, and duration.</p>
+            </div>
+            <div class="step__visual step__visual--explore" aria-hidden="true">
+              <div class="mockup-cards">
+                <div class="mockup-card-sm"></div>
+                <div class="mockup-card-sm mockup-card-sm--offset"></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="step">
+            <div class="step__number" aria-hidden="true">03</div>
+            <div class="step__content">
+              <h3 class="step__title">Learn, discuss, and earn credentials</h3>
+              <p class="step__desc">Complete lessons at your own pace, participate in live seminars, and collect verifiable certificates to showcase your mastery.</p>
+            </div>
+            <div class="step__visual step__visual--certificate" aria-hidden="true">
+              <div class="mockup-cert">
+                <div class="mockup-cert-icon">🏅</div>
+                <div class="mockup-cert-lines">
+                  <div class="mockup-line"></div>
+                  <div class="mockup-line mockup-line--short"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats section">
+      <div class="container stats__grid">
+        <div class="stat">
+          <span class="stat__number" data-target="50000">50,000+</span>
+          <span class="stat__label">Active Learners</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="1200">1,200+</span>
+          <span class="stat__label">Expert Instructors</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="3500">3,500+</span>
+          <span class="stat__label">Courses &amp; Symposiums</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number" data-target="98">98%</span>
+          <span class="stat__label">Satisfaction Rate</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Testimonials</span>
+          <h2 class="section__title">Voices from our community</h2>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <blockquote class="testimonial">
+            <p class="testimonial__quote">"Symposium completely changed how I approach professional development. The live panel discussions are unlike anything else I've experienced online."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar testimonial__avatar--1" aria-hidden="true"></div>
+              <div>
+                <cite class="testimonial__name">Priya Nair</cite>
+                <span class="testimonial__role">Product Manager, Brightway</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial testimonial--featured">
+            <p class="testimonial__quote">"I earned two certificates in three months and landed my dream job. The personalised learning path kept me on track when motivation dipped."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar testimonial__avatar--2" aria-hidden="true"></div>
+              <div>
+                <cite class="testimonial__name">James Okafor</cite>
+                <span class="testimonial__role">Data Analyst, NovaTech</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p class="testimonial__quote">"As an instructor, Symposium gives me all the tools I need to run engaging courses and connect with curious learners around the world."</p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar testimonial__avatar--3" aria-hidden="true"></div>
+              <div>
+                <cite class="testimonial__name">Dr. Sarah Chen</cite>
+                <span class="testimonial__role">Professor, Vertix University</span>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRICING ========== -->
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Pricing</span>
+          <h2 class="section__title">Simple, transparent pricing</h2>
+          <p class="section__sub">Start free. Upgrade when you're ready.</p>
+        </div>
+
+        <div class="pricing__toggle" role="group" aria-label="Billing period">
+          <button class="pricing__toggle-btn pricing__toggle-btn--active" id="btn-monthly" aria-pressed="true">Monthly</button>
+          <button class="pricing__toggle-btn" id="btn-annual" aria-pressed="false">Annual <span class="pricing__save-badge">Save 20%</span></button>
+        </div>
+
+        <div class="pricing__grid">
+
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name">Free</h3>
+              <div class="pricing-card__price">
+                <span class="pricing-card__amount">$0</span>
+                <span class="pricing-card__period">forever</span>
+              </div>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Access to 50+ free courses</li>
+              <li>Community discussion forums</li>
+              <li>1 live symposium per month</li>
+              <li>Basic progress tracking</li>
+            </ul>
+            <a href="#cta" class="btn btn--outline btn--full">Get Started</a>
+          </div>
+
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-card__popular">Most Popular</div>
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name">Pro</h3>
+              <div class="pricing-card__price">
+                <span class="pricing-card__amount" data-monthly="$29" data-annual="$23">$29</span>
+                <span class="pricing-card__period">/month</span>
+              </div>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Unlimited course access</li>
+              <li>Unlimited live symposiums</li>
+              <li>Verified certificates</li>
+              <li>Personalised learning paths</li>
+              <li>Offline downloads</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="#cta" class="btn btn--primary btn--full">Start Free Trial</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-card__header">
+              <h3 class="pricing-card__name">Teams</h3>
+              <div class="pricing-card__price">
+                <span class="pricing-card__amount" data-monthly="$49" data-annual="$39">$49</span>
+                <span class="pricing-card__period">/user/month</span>
+              </div>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Everything in Pro</li>
+              <li>Team analytics dashboard</li>
+              <li>Custom learning tracks</li>
+              <li>SCIM / SSO support</li>
+              <li>Dedicated account manager</li>
+              <li>Custom invoicing</li>
+            </ul>
+            <a href="#cta" class="btn btn--outline btn--full">Contact Sales</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="cta-banner section" id="cta">
+      <div class="container cta-banner__inner">
+        <h2 class="cta-banner__title">Ready to join the conversation?</h2>
+        <p class="cta-banner__sub">Start your free account today and discover what learning together can do.</p>
+        <form class="cta-banner__form" novalidate>
+          <label for="email-input" class="visually-hidden">Your email address</label>
+          <input
+            type="email"
+            id="email-input"
+            name="email"
+            class="cta-banner__input"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn btn--primary btn--lg">Get Started Free</button>
+        </form>
+        <p class="cta-banner__note">No credit card required · Unsubscribe anytime</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="nav__logo" href="#hero" aria-label="Symposium.education home">
+          <span class="nav__logo-icon" aria-hidden="true">◈</span>
+          Symposium<span class="nav__logo-dot">.education</span>
+        </a>
+        <p class="site-footer__tagline">Learn together. Grow further.</p>
+      </div>
+
+      <nav class="site-footer__links" aria-label="Footer navigation">
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Product</h4>
+          <ul role="list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Company</h4>
+          <ul role="list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Support</h4>
+          <ul role="list">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4 class="site-footer__col-title">Legal</h4>
+          <ul role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Symposium.education. All rights reserved.</p>
+        <div class="site-footer__social" aria-label="Social links">
+          <a href="#" aria-label="Twitter / X"><span aria-hidden="true">𝕏</span></a>
+          <a href="#" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
+          <a href="#" aria-label="YouTube"><span aria-hidden="true">▶</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
